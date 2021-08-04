@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Buttons/Button';
+import CartWidget from './CartWidget';
 
 export default function NavBar() {
   return (
@@ -10,6 +11,7 @@ export default function NavBar() {
       <Button text="Productos" />
       <Button text="Blog" />
       <Button text="Contacto" />
+      <CartWidget />      
     </>
   );
 }
