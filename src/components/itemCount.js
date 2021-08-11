@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
-const ItemCount = (props) => {
+const ItemCount = ({stock, initial, onAdd}) => {
 
-        const [cantidadItem, setCantidadItem] = useState(0);
+        const [cantidadItem, setCantidadItem] = useState(initial);
 
         function addCantidad() { 
-            if(cantidadItem < props.stock) {
+            if(cantidadItem < stock) {
                 setCantidadItem(cantidadItem + 1); 
             } else {
                 console.log('no items más disponibles');
@@ -16,23 +16,28 @@ const ItemCount = (props) => {
                 setCantidadItem(cantidadItem - 1); 
             }
         }
-        function onAdd() {
-            console.log(`Se agregaron: ${cantidadItem}`);
-        }
-       
+               
+               
         return (
           <>
             <div className="item-count-carrito">  
                 <div className="text-center stock-disponible">                
-                    <span>Stock disponible: {props.stock}</span>
-                    
+                    <span>Stock disponible: {stock}</span><br />
+                    <span>Stock initial: {initial}</span>
                 </div>              
                 <div className="col-md-12 d-flex mt-1 align-items-center">
                         <button type="button" onClick={removeCantidad} className="btn btn-secondary btn-sm btn-form-input">-</button>
-                        <input type="text" className="form-control form-input-number" placeholder={cantidadItem} />
+                        <div className="form-control form-input-number">{cantidadItem}</div>
                         <button type="button" onClick={addCantidad} className="btn btn-secondary btn-sm btn-form-input">+</button>
                 </div>
-                <button type="button" disabled={ props.stock <= 1 ? true : false } onClick={onAdd} className="col-md-12 btn btn-form-input">Agregar</button>
+                <button 
+                    onClick = { ( ) => onAdd(cantidadItem) }
+                    disabled={ stock <= 1 ? true : false } 
+                    className="col-md-12 btn btn-form-input"
+                    type="button" 
+                >
+                    Agregar
+                </button>
             </div>
             
           </>
