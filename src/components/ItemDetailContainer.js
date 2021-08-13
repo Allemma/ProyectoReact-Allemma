@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
-import ItemList from './ItemList';
-import ItemDetailContainer from './ItemDetailContainer';
+import React, {useState, useEffect} from 'react'
+import ItemDetail from './ItemDetail'
 
-
-const getItems = () => {
+const getItemsDetail = () => {
     return new Promise((res, rej) => {
         setTimeout(() =>{
+            console.log('Montado getItemsDetail');
+
             let obtenerProductos = [
                 {
                 id: "1",
@@ -36,24 +36,22 @@ const getItems = () => {
     })
 }
 
-const ItemListContainer = ({title}) => {
+const ItemDetailContainer = () => {
 
-    const [items, setItems] = useState([]);
+    const [itemsDetalles, setItemsDetalles] = useState([]);
 
     useEffect( () => {
-        console.log('ItemListContainerInicializado');       
-        getItems().then(item => {
-            setItems(item);
+        console.log('ItemListContainerInicializado');
+        getItemsDetail().then(itemsDetalle => {
+            setItemsDetalles(itemsDetalle);
         });
-    }, []);    
+    }, []);
 
     return (
-        <div>
-            <h2>{title}</h2>            
-            <ItemList item={items} /> 
-            <ItemDetailContainer />      
-        </div>
+        <>
+            <ItemDetail itemsDetalle={itemsDetalles} /> 
+        </>
     )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer

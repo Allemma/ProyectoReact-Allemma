@@ -1,7 +1,7 @@
 import React from 'react'
 import ItemCount from './ItemCount';
 
-const Item = ({items}) => {
+const Item = ({item}) => {
 
     function onAdd(){
         alert('Agregado al carrito');
@@ -9,17 +9,17 @@ const Item = ({items}) => {
 
     return (
         <>
-            <div className="col-md-2">
-                <p>{items.pictureUrl}</p>
-            </div>
-            <div className="col-md-7">
-            <h2>Titulo: {items.title}</h2>
-                <p>SKU: {items.id}</p>
-                <p>Precio: {items.price}</p>
-            </div>
-            <div className="col-md-3">
-                <ItemCount stock={5} initial={1} onAdd={onAdd} />
-            </div>
+                 <div className="col-md-2">
+                    <p>{item.pictureUrl}</p>
+                </div>
+                <div className="col-md-7">
+                <h2>{item.title}</h2>
+                    <p>SKU: {item.id}</p>
+                    <p>Precio: u$s {item.price}</p>
+                </div>
+                <div className="col-md-3">
+                    <ItemCount stock={10} initial={1} onAdd={onAdd} />
+                </div>
         </>
     )
 }

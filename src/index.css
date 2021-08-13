@@ -1,17 +1,52 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
 
 .icono-carrito {
-color: #333333;
-transition: ease 300ms;
+  color: #333333;
+  transition: ease 300ms;
 }
 .icono-carrito:hover {
-color: #3cefab;
+  color: #3cefab;
+}
+
+.item-count-carrito {
+  max-width: 150px;
+  padding: 0.5em 0.5em 0em 0.5em;
+  margin-bottom: 0.5em;
+  box-shadow: 1px 1px 17px #cccccc;
+}
+
+.btn-form-input {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  background-color: transparent;
+  color: #333333;
+  border: 1px solid #ced4da;
+}
+.btn-form-input:hover {
+  box-shadow: 1px 1px 17px #e4e4e4;
+}
+.form-input-number {
+  text-align: center;
+  margin-left: .2em;
+  margin-right: .2em;
+  color: #333333;
+}
+.stock-disponible { 
+  color: #181818;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+.vista-productos {
+  background-color: #3cefab;
 }
