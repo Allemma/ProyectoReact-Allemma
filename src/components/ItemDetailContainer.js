@@ -12,19 +12,7 @@ const getItemsDetail = () => {
                 title: "nombre",
                 pictureUrl: "imagen-01.jpg",
                 price: 20
-                },
-                {
-                id: "2",
-                title: "nombre 2",
-                pictureUrl: "imagen-02.jpg",
-                price: 21
-                },
-                {
-                id: "3",
-                title: "nombre 3",
-                pictureUrl: "imagen-03.jpg",
-                price: 22
-                }
+                }                
             ];
     
             if(obtenerProductos){
