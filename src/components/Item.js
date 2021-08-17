@@ -18,7 +18,7 @@ const Item = ({item}) => {
                     <p>Precio: u$s {item.price}</p>
                 </div>
                 <div className="col-md-3">
-                    <ItemCount stock={10} initial={1} onAdd={onAdd} />
+                    <ItemCount stock={6} initial={1} onAdd={onAdd} />
                 </div>
         </>
     )
