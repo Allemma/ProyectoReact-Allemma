@@ -28,7 +28,7 @@ const getItems = () => {
             ];
     
             if(obtenerProductos){
-                res(obtenerProductos);
+                res(obtenerProductos.filter(producto => producto.id === 3 ));
             } else {
                 rej('Tarea Error');
             }
@@ -49,9 +49,11 @@ const ItemListContainer = ({title}) => {
 
     return (
         <div>
-            <h2>{title}</h2>            
-            <ItemList item={items} /> 
-            <ItemDetailContainer />      
+            <h2>{title}</h2>   
+            <ItemDetailContainer />           
+            <ItemList item={items} />
+             
+            
         </div>
     )
 }
