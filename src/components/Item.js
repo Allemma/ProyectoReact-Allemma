@@ -10,11 +10,9 @@ const Item = ({item}) => {
 
     return (
         <>
-                <div className="col-md-2 align-self-center">
-                    <Link to={`/item/${item.id}`}>                    
-                        <img  alt={item.title} />
-                    </Link>
-                </div>
+                <Link to={`/item/${item.id}`}> 
+                <p>{item.pictureUrl}</p>
+                </Link>
                 <div className="col-md-7">
                 <h2>{item.title}</h2>
                     <p>SKU: {item.id}</p>
