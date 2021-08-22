@@ -1,26 +1,26 @@
 import React from 'react'
-import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
 
-const Item = ({item}) => {
-
-    function onAdd(){
-        alert('Agregado al carrito');
-    }
+const Item = ({ item }) => {
 
     return (
         <>
-                <Link to={`/item/${item.id}`}> 
-                <p>{item.pictureUrl}</p>
+            <div className="col-md-3 align-self-center vista-productos">            
+                <Link to={`/item/${item.id}`}>                    
+                    <img className="imagen-producto-list" alt={item.title} src="https://www.armadagamer.com/wp-content/uploads/img/motherboard-rog-strix-z390-e-gaming_1855931_md.jpg" />
                 </Link>
-                <div className="col-md-7">
-                <h2>{item.title}</h2>
-                    <p>SKU: {item.id}</p>
-                    <p>Precio: u$s {item.price}</p>
-                </div>
-                <div className="col-md-3">
-                    <ItemCount stock={6} initial={1} onAdd={onAdd} />
-                </div>
+                <h2 className="titulo-producto">{item.title}</h2>
+                <p><strong>SKU:</strong> {item.id}</p>
+                <p><strong>Precio:</strong> u$s {item.price}</p>
+                <p>{item.pictureUrl}</p>
+
+                <Link 
+                to={`/item/${item.id}`}
+                className="col-md-12 btn btn-detalle"
+                > 
+                Ver detalle
+                </Link>
+            </div>
         </>
     )
 }
