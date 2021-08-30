@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const Cart = () => {
 
-    const { cart, remove, clear, isEmpty } = useCartContext();    
+    const { cart, remove, clear, isEmpty,  sumarTotal } = useCartContext();    
     
     return (
         <>      
@@ -29,6 +29,7 @@ const Cart = () => {
                         <p className="titulos-items-agregados"><strong>Precio total: </strong>{p.price * p.quantity}</p>
                     </div>
                     <div className="col-md-2 align-self-center">
+                        <div>{ sumarTotal() }</div>
                         <button
                             className="btn-remove"
                             onClick={() => {
@@ -40,7 +41,6 @@ const Cart = () => {
                     </div>                        
                 </li>
             ))}
-                
             <button className="btn-vaciar-carrito" disabled={isEmpty} onClick={() => { clear() } } >Vaciar todo el carrito</button>
         </ul>
         }  

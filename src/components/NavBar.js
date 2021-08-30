@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { useCartContext } from '../context/cartContext';
 
 const NavBar = () => {
-    const { cart } = useCartContext();   
+    const { sumarItems } = useCartContext();  ;   
 
     const implementarCategorias = [
         {id: 'teclados', name: 'Teclados'},
@@ -33,13 +33,7 @@ const NavBar = () => {
                         )}
                     </ul> 
                 <CartWidget /> 
-                <span className="items-en-carrito">
-                    {cart.map(itemsAgregados => (
-                        <span key={itemsAgregados.id}>
-                            {Number(itemsAgregados.quantity)}
-                        </span>
-                    ))}
-                </span>
+                {sumarItems()}  
                 </div>
             </nav>
         </div>
