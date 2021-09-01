@@ -142,11 +142,22 @@ code {
   padding: 1em;
   margin-bottom: 0.5em;
 }
+@media only screen and (min-width: 767px) {
+  .vista-productos,
+  .items-agregados:first-child {
+    margin-top: 2em;
+  }
+}
 
 .titulo-producto {
   font-weight: bold;
   color: #4d41c7;
   font-size: 1.6em;
+}
+.description-producto-cat {
+  color: #a7a7a7;
+  max-width: 100%;
+  font-size: 0.75em;
 }
 
 .navbar-dark .navbar-brand {
@@ -174,4 +185,19 @@ code {
 
 .titulos-items-agregados {
   font-size: 0.85em;
+}
+
+.compra-finalizada {
+  color: #0f5720;
+  background-color: #86e97d;
+  border-color: #86e97d;
+  box-shadow: 1px 1px 17px #e4e4e4
+}
+.compra-finalizada hr {
+  border-top-color: #0f5720;
+}
+
+.form-control {
+  border: 1px solid #ffffff;
+  box-shadow: inset 1px 1px 10px #e4e4e4
 }

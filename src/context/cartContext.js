@@ -5,6 +5,7 @@ export const useCartContext = () => useContext(CartContext);
 export default function CartProvider({ children, defaultCart = [] }) {
 
     const [cart, setCart] = useState(defaultCart);
+    let nuevoCart;
 
    
     function add(item) {    
@@ -14,6 +15,15 @@ export default function CartProvider({ children, defaultCart = [] }) {
             console.log('Agregaste:', item);     
         } else {
             console.log('Duplicado o nulo:', item);
+            nuevoCart = [...cart];
+
+            const filtrarId = nuevoCart.findIndex(buscarIndex => buscarIndex.id === item.id);
+
+            if(filtrarId !== -1){                    
+                nuevoCart[filtrarId].quantity = nuevoCart[filtrarId].quantity + item.quantity;
+                setCart(nuevoCart); 
+            }
+           
         }       
     }
    
@@ -40,13 +50,8 @@ export default function CartProvider({ children, defaultCart = [] }) {
     function sumarTotal() {
         // Sumar cantidad
         let sumarTotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-        return (
-            <>
-            <span className="row items-agregados total-a-pagar">
-                Total a pagar: ${sumarTotal}
-            </span>
-            </>
-        );
+        
+        return (sumarTotal);
     }
     sumarTotal()
 

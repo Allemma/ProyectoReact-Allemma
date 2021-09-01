@@ -14,7 +14,7 @@ function App() {
         <Switch className="container-fluid p-3">
             
             <Route exact path="/item/:id">
-              <h2>Vista Detail</h2>
+              
               <ItemDetailContainer />  
             </Route>
 
@@ -28,7 +28,7 @@ function App() {
             </Route>
 
             <Route exact path="/">
-              <ItemListContainer title='Vista Item List'/>
+              <ItemListContainer />
             </Route>
 
         </Switch>

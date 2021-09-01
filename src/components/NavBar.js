@@ -5,14 +5,13 @@ import { useCartContext } from '../context/cartContext';
 
 const NavBar = () => {
     const { sumarItems } = useCartContext();  ;   
-
+    
     const implementarCategorias = [
         {id: 'teclados', name: 'Teclados'},
         {id: 'mouse', name: 'Mouse'},
         {id: 'memoria', name: 'Memorias'},
         {id: 'auriculares', name: 'Auriculares'}
     ];
-
 
     return (
         <div>
@@ -23,7 +22,7 @@ const NavBar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav">
-                        <li className="nav-item active">
+                        <li className="nav-item">
                             <NavLink className="nav-link" to="/">Inicio</NavLink>
                         </li>
                         {implementarCategorias.map(cat => 
@@ -32,8 +31,10 @@ const NavBar = () => {
                             </li>
                         )}
                     </ul> 
-                <CartWidget /> 
-                {sumarItems()}  
+                    <CartWidget />
+                    <span className="items-en-carrito">
+                    {sumarItems()}
+                    </span>    
                 </div>
             </nav>
         </div>

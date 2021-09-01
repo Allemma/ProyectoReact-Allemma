@@ -5,7 +5,7 @@ const ItemDetail = ({ itemsDetalle }) => {
     return (
         <div className="container">
             <Detail key={itemsDetalle.id} itemsDetalle={itemsDetalle} />
-            {console.log({itemsDetalle})}
+            
         </div>
     )
 }
