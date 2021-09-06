@@ -3,6 +3,7 @@ import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart';
+import P404 from './components/P404';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CartProvider from './context/cartContext';
 
@@ -28,7 +29,11 @@ function App() {
             </Route>
 
             <Route exact path="/">
-              <ItemListContainer />
+              <ItemListContainer title={'Bienvenidos a E-Tienda'} />
+            </Route>
+
+            <Route>
+              <P404 />
             </Route>
 
         </Switch>
